@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter Person</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/new}" th:object="${user}" method="post">
+	<table>
+	
+		<tr>
+			<td>Nombre:</td>
+			<td><input type="text" th:field="*{firstName}"/></td>
+			<td th:if="${#fields.hasErrors('firstName')}"
+			    th:errors="*{firstName}">Nombre Error</td>
+		</tr>
+		
+		<tr>
+			<td>Apellido:</td>
+			<td><input type="text" th:field="*{lastName}"/></td>
+			<td th:if="${#fields.hasErrors('lastName')}"
+			    th:errors="*{lastName}">Apellido Error</td>
+		</tr>
+		
+		<tr>
+			<td>Recorrido:</td>
+			<td><input type="text" th:field="*{recorrido}"/></td>
+			<td th:if="${#fields.hasErrors('recorrido')}"
+			    th:errors="*{firstName}">Recorrido Error</td>
+		</tr>
+		
+		<tr>
+			<td>Marca:</td>
+			<select type="text" th:field="*{marca}">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option></select>
+			
+			<td th:if="${#fields.hasErrors('marca')}"
+			    th:errors="*{marca}">Marca Error</td>
+		</tr>
+		
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="enviar"/>
+				<input type="reset" value="cancelar"/></td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</form>
+
+</body>
+</html>
