@@ -33,10 +33,10 @@
 		
 		<tr>
 			<td>Marca:</td>
-			<select type="text" th:field="*{marca}">
-			<option>A</option>
-			<option>B</option>
-			<option>C</option></select>
+			<td><select type="text" th:field="*{marca}">
+			<option th:value="A">Porsche</option>
+			<option th:value="B">BMW</option>
+			<option th:value="C">Audi</option></select></td>
 			
 			<td th:if="${#fields.hasErrors('marca')}"
 			    th:errors="*{marca}">Marca Error</td>
